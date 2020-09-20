@@ -1,0 +1,168 @@
+body {
+    background: rgb(47, 47, 82);
+    margin:0;
+    padding: 0;
+    height:100%;
+    width:100%;
+    max-width: 1040px;
+    font-family: sans-serif;
+}
+
+.game-container {
+    height:100%;
+    max-height: 540px;
+    min-height: 380px;
+    width:100%;
+    max-width: 1040px;
+    background:white;
+    border: 20px solid black;
+}
+
+.game-navigation {
+    margin:auto;
+    margin-top: 1rem;
+    text-align:center;
+    width:250px;    
+}
+
+.nav-button button{
+    height: 80px !important;
+    width:80px !important;
+}
+
+.game-controls {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 0;
+    background: none;
+    /* display: block; */
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    width: 200px;
+    font-size: larger;
+    font-weight: bold;;
+}
+
+button[type="submit"] {
+    width: 300px;
+    background: #2ecc71;
+}
+
+input {
+    border:0;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid white;
+    padding: 14px 10px;
+    width: 300px;
+    outline: none;
+    color: #2ecc71;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.game-controls button[type = "button"]:hover {
+    background: #2ecc71;    
+}
+
+.game-controls button[disabled] {
+    background:lightgray;
+    border-color: lightgray;    
+}
+
+.button__start {
+    height:100%;
+}
+
+.button__start button {
+    background: #2ecc71;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    width: 300px;
+    font-size: xxx-large;
+    font-weight: bold;
+}
+
+.game-score {
+    display:flex;
+    justify-content: space-between;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: white;
+}
+
+.game-score label {
+    font-weight: normal;
+    font-size: 15px;
+    color: #2ecc71;
+}
+
+.game-score .user-score {
+    text-align: right;
+}
+
+.score-submit-box {
+    width: 400px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: #34495e;
+    text-align: center;
+    box-shadow: 10px 15px;
+}
+
+.score-submit-box h1 {
+    color: white;
+    font-weight: 500;
+    font-style: sans-serif;
+    font-size: 30px;
+}
+
+.score-submit-box .score {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: white;
+}
+
+.loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #34495e;
+    width: 22px;
+    height: 22px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 400px) {
+    .game-controls button[type = "button"] {
+        width: 100%;
+    }
+}

@@ -1,0 +1,45 @@
+.board-container {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: white;
+    padding-left: 2rem;
+    border-left: 1px solid #2ecc71;
+    height: 80vh;
+    overflow: auto;
+}
+
+.board-title {
+    color: #2ecc71;
+    margin-bottom: 1rem;
+}
+
+.slds-text-longform ol{
+    margin-left: 3.5rem;
+    margin-right: 2rem;
+}
+
+.slds-text-longform li{
+    margin-bottom: inherit;
+}
+
+.score-item {
+    display: flex;
+    justify-content:space-between;
+    line-height: 1;
+}
+
+.score-item .score {
+    text-align: right;
+    font-size: 30px;
+}
+
+.score-item .player-name {
+    font-size: 25px;
+}
+
+.score-item .date {
+    font-weight: normal;
+    font-size: 15px;
+    color: #2ecc71;
+}

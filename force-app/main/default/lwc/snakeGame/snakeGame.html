@@ -1,0 +1,60 @@
+<template>
+    <div class="game-score">
+        <div class="user-level" id="user-level">
+            <label for="user-level" class="user_label">Level</label>
+            <div>{currentLevel}</div>            
+        </div> 
+        <div class="user-score" id="user-score">
+            <label for="user-score" class="score_label">Score</label>
+            <div>{score}</div>            
+        </div>        
+    </div>
+    <div class="game-container">
+        <canvas id="game-canvas"></canvas>
+    </div>
+    <div class="game-navigation" if:true={showControls}>
+        <div><lightning-button-icon icon-name="utility:chevronup"  alternative-text="Move Up" title="Move Up" onclick={hanleSnakMove} class="nav-button"></lightning-button-icon></div>
+        <div style="display:flex;justify-content: space-between;">
+            <div><lightning-button-icon icon-name="utility:chevronleft"  alternative-text="Move Left" title="Move Left" onclick={hanleSnakMove} class="nav-button"></lightning-button-icon></div>
+            <div><lightning-button-icon icon-name="utility:chevronright"  alternative-text="Move Right" title="Move Right" onclick={hanleSnakMove} class="nav-button"></lightning-button-icon></div>
+        </div>
+        <div><lightning-button-icon icon-name="utility:chevrondown"  alternative-text="Move Down" title="Move Down" onclick={hanleSnakMove} class="nav-button"></lightning-button-icon></div>
+    </div>
+    <div class="game-controls">
+        <button type="button" onclick={handlePauseOrStart} disabled={isGameOver}>{startOrPause}</button>
+        <button type="button" onclick={handleRestart}>Restart</button>
+    </div>
+
+    <c-modal-box show-modal={showModal}>
+        <div slot="body" style="height:100%">
+            <div class="button__start slds-align_absolute-center" id="start-game">
+                <button type="button" onclick={handleRestart}>
+                    Start!
+                    <h4 style="font-size:10px;">Recommended to play on desktop.</h4>
+                </button>
+            </div>
+        </div>
+    </c-modal-box>
+
+    <c-modal-box show-modal={isGameOver}>
+        <div slot="body" style="height:100%">
+            <div class="score-submit-box">
+                <h1>Your Score!</h1>
+                <div class="score">{score}</div>
+                <template if:false={isSubmitted}>
+                    <form>
+                        <input type="text" name="player-name" required placeholder="Name" >
+                        <button type="submit" onclick={handleScoreSubmit}>
+                            <div if:true={showSpinner} class="loader slds-align_absolute-center"></div>
+                            <span if:false={showSpinner}>Submit</span>
+                        </button>
+                    </form>
+                </template>
+                <template if:true={isSubmitted}>
+                    <div class="score">Submitted!</div>
+                </template>                
+                <button type="button" onclick={handleRestart}>Restart</button>
+            </div>
+        </div>
+    </c-modal-box>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <template if:true={scores}>
+        <div class="board-container slds-text-longform">
+            <div class="board-title">Top 10 Scores</div>
+            <ol>
+                <template iterator:it={scores}>
+                    <li key={it.value.Id}>
+                        <div class="score-item">
+                            <div>
+                                <div class="player-name">{it.value.Player_Name__c}</div>
+                                <lightning-formatted-date-time value={it.value.CreatedDate} class="date">
+                                </lightning-formatted-date-time>
+                            </div>
+                            <div class="score">{it.value.Score__c}</div>
+                        </div>                    
+                    </li>
+                </template>       
+            </ol>
+        </div> 
+    </template>   
+</template>
